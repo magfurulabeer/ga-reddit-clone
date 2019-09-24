@@ -1,6 +1,9 @@
-h1{
-    background-color: red
+head{
+    background-color: red;
+    text-align: center;
+    position: fixed;
+    
 }
 body{
-    background-color: black
+    background-color: black;
 }
