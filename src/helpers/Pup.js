@@ -32,11 +32,12 @@ class Pup {
     for (key in Object.keys(config)) {
       this.headers.set(key, config[key])
     }
+    return this
   }
 
   fetch () {
     if (!this.method || !this.baseURL) {
-      throw Error('Pup does not have a valid method or base url')
+      throw Error('Pup::fetch() - Missing HTTP verb and/or Base URL')
     }
 
     const url = this.baseURL + this.path
@@ -52,6 +53,19 @@ class Pup {
     }
 
     return promise
+  }
+
+  authenticated() {
+    if (!this.getJWT) {
+      throw Error('Pup::authenticated() - No way to get JWT')
+    }
+
+    let token = this.getToken()
+    if (!token) {
+      throw Error('Pup::authenticated() - No JWT token set')
+    }
+
+    return this.withHeaders({ Authorization: `Bearer ${token}` })
   }
 
   queryString(params) {
