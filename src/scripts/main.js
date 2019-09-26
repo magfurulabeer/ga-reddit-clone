@@ -1,4 +1,4 @@
-
+import api from "../helpers/API.js"
 const signup = document.getElementById("signUp")
 signup.addEventListener("submit", onSignup)
 
@@ -13,22 +13,11 @@ function onSignup(event)
     password,
     email
   }))
-  fetch("http://thesi.generalassemb.ly:8080/signup", {
-    method : "post",
-    headers: {"Content-Type" : "application/json"},
-    body : JSON.stringify({
-      username,
-      password,
-      email
-    })
-  })
-  .then((response) => {
-    console.log(response)
-    return response.json() 
-  })
-  
-  .then((data) => {
-        if(data.token)
+ 
+ api.signup(email,password,username)
+   .then((data) => {
+    console.log(data)    
+    if(data.token)
         {
           sessionStorage.setItem("JWT",data.token)
         }
