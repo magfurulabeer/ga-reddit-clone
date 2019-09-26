@@ -56,7 +56,7 @@ api.signup = (email, password, username) => api.pup.post('/signup').withBody({ e
 **    }
 **  }
 */
-api.createComment = (text, postId) => api.pup.post(`/comment/${postId}`).withBody({ text }).fetch()
+api.createComment = (text, postId) => api.pup.post(`/comment/${postId}`).withBody({ text }).authenticated().fetch()
 
 
 /*
@@ -76,7 +76,7 @@ api.createComment = (text, postId) => api.pup.post(`/comment/${postId}`).withBod
 **      }
 **  }
 */
-api.createPost = (title, description) => api.pup.post('/post').withBody({ title, description }).fetch()
+api.createPost = (title, description) => api.pup.post('/post').withBody({ title, description }).authenticated().fetch()
 
 
 /*
@@ -99,7 +99,7 @@ api.createPost = (title, description) => api.pup.post('/post').withBody({ title,
 **  }
 */
 api.createProfile = (additionalEmail, mobile, address) => 
-  api.pup.post('/profile').withBody({ additionalEmail, mobile, address }).fetch()
+  api.pup.post('/profile').withBody({ additionalEmail, mobile, address }).authenticated().fetch()
 
 
 /*
@@ -152,7 +152,7 @@ api.getCommentsByPostId = (postId) => api.pup.get(`post/${postId}/comment`).fetc
 **  RESPONSE
 **  success
 */
-api.deleteCommentByCommentId = (commentId) => api.pup.delete(`comment/${commentId}`).fetch()
+api.deleteCommentByCommentId = (commentId) => api.pup.delete(`comment/${commentId}`).authenticated().fetch()
 
 /*
 **  BODY
@@ -161,7 +161,7 @@ api.deleteCommentByCommentId = (commentId) => api.pup.delete(`comment/${commentI
 **  RESPONSE
 **  success
 */
-api.deletePostByPostId = (postId) => api.pup.delete(`post/${postId}`).fetch()
+api.deletePostByPostId = (postId) => api.pup.delete(`post/${postId}`).authenticated().fetch()
 
 /*
 **  BODY
@@ -179,7 +179,7 @@ api.deletePostByPostId = (postId) => api.pup.delete(`post/${postId}`).fetch()
 **      }
 **  }
 */
-api.getProfile = () => api.pup.get('/post/list').fetch()
+api.getProfile = () => api.pup.get('/profile').authenticated().fetch()
 
 /*
 **  BODY
@@ -203,7 +203,7 @@ api.login = (email, password) => api.pup.post('/login').withBody({ email, passwo
 **  RESPONSE
 **  []
 */
-api.getCommentsByUser = () => api.pup.get('/user/comment').fetch()
+api.getCommentsByUser = () => api.pup.get('/user/comment').authenticated().fetch()
 
 
 /*
@@ -213,7 +213,7 @@ api.getCommentsByUser = () => api.pup.get('/user/comment').fetch()
 **  RESPONSE
 **  [] 
 */
-api.getPostsByUser = () => api.pup.get('user/post').fetch()
+api.getPostsByUser = () => api.pup.get('user/post').authenticated().fetch()
 
 
 /*
@@ -227,6 +227,6 @@ api.getPostsByUser = () => api.pup.get('user/post').fetch()
 **    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0c2RlckBzdXBlcmhlcm8uY29tIiwiZXhwIjoxNTY5NDUxNjMxLCJpYXQiOjE1Njk0MzM2MzF9.50d8VMMggDBuDGmiQc7on9CZnZ3Sj6qiLA1x19v2L2LiqbmSByqDHHXAuf10wq6nKtuPrL7ymKu4Rb8_Eesbqg"
 **  } 
 */
-api.updateProfile = () => api.pup.post('/profile').fetch()
+api.updateProfile = () => api.pup.post('/profile').authenticated().fetch()
 
 export default api
