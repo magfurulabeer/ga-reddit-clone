@@ -2,18 +2,14 @@ import api from "../helpers/API.js"
 const createPost = document.getElementById("userPost")
     createPost.addEventListener("submit",create)
 
-
 function create(event)
 {
-console.log("working")   
     event.preventDefault()
-    let title = document.getElementById("title")
-    let discription = document.getElementById("discription")
+    let title = document.getElementById("title").value
+    let discription = document.getElementById("discription").value
     api.createPost(title,discription)
     .then((data) => {
-        console.log(`CreateEvent: ${data}`)
-        // window.location.href= "../index.html"
-    
+        window.location.href= "../index.html"
     })
     
 }

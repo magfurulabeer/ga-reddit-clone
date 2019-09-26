@@ -15,7 +15,6 @@ api.listAllPosts()
      {
         let post = document.createElement("li")
         post.textContent = `${posts[i].title}`
-        console.log(post[i])
         document.getElementById("postsList").appendChild(post)
      }
 })

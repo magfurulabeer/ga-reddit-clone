@@ -7,12 +7,11 @@ class API {
 
   setJWT(token) {
     sessionStorage.setItem('Authorization', `Bearer ${token}`)
-    this.pup.getToken = sessionStorage.getItem.bind(null, 'Authorization')
   }
 
   clearJWT() {
     sessionStorage.removeItem('Authorization')
-    this.pup.getToken = null
+    // this.pup.getToken = null
   }
 }
 
