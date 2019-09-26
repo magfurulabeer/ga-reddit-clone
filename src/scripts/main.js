@@ -1,13 +1,40 @@
-import api from '../helpers/API.js'
 
-let token = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0c2RlckBzdXBlcmhlcm8uY29tIiwiZXhwIjoxNTY5NDUxNjMxLCJpYXQiOjE1Njk0MzM2MzF9.50d8VMMggDBuDGmiQc7on9CZnZ3Sj6qiLA1x19v2L2LiqbmSByqDHHXAuf10wq6nKtuPrL7ymKu4Rb8_Eesbqg'
+const signup = document.getElementById("signUp")
+signup.addEventListener("submit", onSignup)
 
-async function st() {
-  api.setJWT(token)
-  let data = await api.getProfile()
-  console.log('<><><><><><>')
-  console.log(data)
-  console.log('<><><><><><>')
+function onSignup(event)
+{
+  event.preventDefault()
+  const username = document.getElementsByName("UserName")[0].value
+  const password = document.getElementsByName("MyPass")[0].value
+  const email = document.getElementsByName("MyEmail")[0].value
+  console.log(JSON.stringify({
+    username,
+    password,
+    email
+  }))
+  fetch("http://thesi.generalassemb.ly:8080/signup", {
+    method : "post",
+    headers: {"Content-Type" : "application/json"},
+    body : JSON.stringify({
+      username,
+      password,
+      email
+    })
+  })
+  .then((response) => {
+    console.log(response)
+    return response.json() 
+  })
+  
+  .then((data) => {
+        if(data.token)
+        {
+          sessionStorage.setItem("JWT",data.token)
+        }
+        else{
+          throw Error("SignUp failed")
+        }
+      })
+      
 }
-
-st()
