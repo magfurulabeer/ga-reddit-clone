@@ -13,7 +13,8 @@ function onLogIn(event)
     console.log(data)    
     if(data.token)
         {
-          sessionStorage.setItem("JWT",data.token)
+          api.setJWT(data.token)
+          window.location.href = "../index.html"
         }
         else{
           throw Error("Login failed")

@@ -8,11 +8,12 @@
     </head>
     <body style = "height: 100%; width: 100%;">
         <form class = "Posting" id = "userPost" action = "../index.html" >
-            <label for="userPost"><h1> Hello</h1> </label>
-            <textarea rows = "5" column = "100" id = "post" form = "userPost"></textarea>
+            <label for="userPost"><h1> </h1> </label>
+            <input type = "text" id = "title">           
+            <textarea rows = "5" column = "100" id = "discription" form = "userPost"></textarea>
                 <button type= "submit" id = "sub" target = "BOT">Post</button>
             <button type ="submit" id = "remove">Delete</button>
         </form>
     </body>
-    <script = "createPost.js"></script>
+    <script type= "module" src= "../scripts/createPost.js"></script>
 </html>
