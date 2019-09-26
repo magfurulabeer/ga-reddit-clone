@@ -10,15 +10,13 @@ function onLogIn(event)
 
   api.login(email,password)
    .then((data) => {
-    console.log(data)    
-    if(data.token)
-        {
-          api.setJWT(data.token)
-          window.location.href = "../index.html"
-        }
-        else{
-          throw Error("Login failed")
-        }
-      })
+    if(data.token) {
+      api.setJWT(data.token)
+      window.location.href = "../index.html"
+    }
+    else {
+      throw Error("Login failed")
+    }
+  })
       
 }
