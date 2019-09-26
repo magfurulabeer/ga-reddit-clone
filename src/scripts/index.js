@@ -11,10 +11,7 @@ api.listAllPosts()
         posts = data
     }
     let postObject = {posts}
-    let postJSON = JSON.stringify(postObject) 
-    console.log("This is" + postJSON)
-    let parseJSON = JSON.parse(postObject)
-    console.log("That is parsed JSON: " + parseJSON)
+
     sessionStorage.setItem("posts",JSON.stringify(postObject))
     for( let i = posts.length - 1; i >=0; i-- )
      {
