@@ -11,19 +11,25 @@ function getQueryVariable(variable)
 }
 let postIndex = getQueryVariable( "postIndex")
 let allPost = sessionStorage.getItem("posts")
-//let parsePost = JSON.parse(allPost)
-console.log(allPost)
+let parsePost = JSON.parse(allPost).posts
+console.log(parsePost)
+let post = parsePost[postIndex]
+console.log(post)
 const createComment = document.getElementById("commentForm")
     createComment.addEventListener("submit",commentMake)
+document.getElementsByTagName("h1")[0].textContent = post.title
+document.getElementsByTagName("h2")[0].textContent = post.user.username
+document.getElementsByTagName("p")[0].textContent = post.description
 
-function commentMake(event)
+    function commentMake(event)
 {
     event.preventDefault()
     
-    /*let discription = document.getElementById("discription").value
+    let discription = document.getElementById("discription").value
     api.createComment(title,discription)
     .then((data) => {
+        
         window.location.href= "../index.html"
-    })*/
+    })
     
 }
