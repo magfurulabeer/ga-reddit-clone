@@ -38,3 +38,33 @@ center{
 .postButtons{
     float: right;
 }
+
+.post-container {
+    display: flex;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    flex-direction: column;
+    height: 150px;
+    width: 40%;
+    border-radius: 5px;
+    background-color: lightgray;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.post-title {
+    font-family: Avenir;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.post-description {
+    font-family: "Noto Sans", Arial, sans-serif;
+    margin: 0;
+    font-size: 18px;
+}
