@@ -1,38 +1,29 @@
 import api from "../helpers/API.js"
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+let postIndex = getQueryVariable( "postIndex")
+let allPost = sessionStorage.getItem("posts")
+//let parsePost = JSON.parse(allPost)
+console.log(allPost)
+const createComment = document.getElementById("commentForm")
+    createComment.addEventListener("submit",commentMake)
 
-api.listAllPosts()
-   .then((data) => {
-    let posts    
-    if(data.length > 10)
-    {
-        posts = data.slice(data.length - 10, data.length)
-    }
-    else{
-        posts = data
-    }
-     console.log(posts)
-    for( let i = posts.length - 1; i >=0; i-- )
-     {
-        console.log(posts[i])
-
-        let post = document.createElement("a")
-
-        let title = document.createElement("h3")
-        let description = document.createElement("p")
-
-        // Change this to go to post.html
-        post.setAttribute('href', '#')
-        post.classList.add('post-container')
-        title.classList.add('post-title')
-        description.classList.add('post-description')
-        
-        title.textContent = `${posts[i].title}`
-        description.textContent = `${posts[i].description}`
-        
-        post.appendChild(title)
-        post.appendChild(description)
-
-        // post.textContent = `${posts[i].title}`
-        document.getElementById("postContainer").appendChild(post)
-     }
-})
+function commentMake(event)
+{
+    event.preventDefault()
+    
+    /*let discription = document.getElementById("discription").value
+    api.createComment(title,discription)
+    .then((data) => {
+        window.location.href= "../index.html"
+    })*/
+    
+}
