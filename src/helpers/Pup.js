@@ -44,7 +44,7 @@ class Pup {
     let promise = fetch(url, {
       method: this.method,
       headers: this.headers, 
-      body: this.queryString(this.body)
+      body: JSON.stringify(this.body)
     })
 
     // If retrieving JSON, automatically parse it
@@ -66,13 +66,6 @@ class Pup {
     }
 
     return this.withHeaders({ Authorization: `Bearer ${token}` })
-  }
-
-  queryString(params) {
-    if (params) {
-      return Object.keys(params).map(key => `${key}=${params[key]}`).join('&')
-    }
-    return null
   }
 }
 
