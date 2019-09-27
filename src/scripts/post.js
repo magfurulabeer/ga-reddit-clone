@@ -15,8 +15,23 @@ let parsePost = JSON.parse(allPost).posts
 console.log(parsePost)
 let post = parsePost[postIndex]
 console.log(post)
+fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
+.then((response) =>{
+    return response.json()
+})
+.then((data) =>{
+    for(let comment of data)
+    {
+        let newComment = document.createElement("li")
+        newComment.textContent = comment.text
+        document.querySelector("ul").appendChild(newComment)
+        
+    }
+})
+
 const createComment = document.getElementById("commentForm")
-    createComment.addEventListener("submit",commentMake)
+createComment.addEventListener("submit",commentMake)
+document.addEventListener("onCLick",removeComment)
 document.getElementsByTagName("h1")[0].textContent = post.title
 document.getElementsByTagName("h2")[0].textContent = post.user.username
 document.getElementsByTagName("p")[0].textContent = post.description
@@ -26,10 +41,18 @@ document.getElementsByTagName("p")[0].textContent = post.description
     event.preventDefault()
     
     let discription = document.getElementById("discription").value
-    api.createComment(title,discription)
+    api.createComment(discription,post.id)
     .then((data) => {
-        
-        window.location.href= "../index.html"
+        //let comment = 
+        console.log(data)
+       // window.location.href= "../index.html"
     })
     
 }
+
+function removeComment(event)
+{
+    event.preventDefault()
+
+}
+
