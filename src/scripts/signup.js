@@ -12,8 +12,13 @@ function onSignup(event)
   api.signup(email,password,username)
     .then((data) => {
       if(data.token) {
+<<<<<<< HEAD
         sessionStorage.setItem("JWT",data.token)
         
+=======
+        sessionStorage.setItem("Authorization",data.token)
+        window.location.href = './home.html'
+>>>>>>> a2422118d175c8ff75d03010fdcd3bf60a0b0b7c
       }
       else{
         throw Error("SignUp failed")
