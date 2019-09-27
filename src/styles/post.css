@@ -1,0 +1,62 @@
+.main-post {
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 11px -5px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 2px 11px -5px rgba(0,0,0,1);
+  box-shadow: 0px 2px 11px -5px rgba(0,0,0,1);
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  font-size: 16px;
+  width: 80%;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start
+}
+
+
+
+#submit-comment-button {
+  width: 70%;
+  background-color: #33CDAB;
+  padding: 7px 0;
+  margin-bottom: 15px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.comment-list {
+  background-color: white;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: 1px solid black;
+  background-image: url('../assets/trash.png');
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: none;
+}

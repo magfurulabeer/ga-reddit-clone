@@ -13,7 +13,7 @@ function onLogIn(event)
     if(data.token) {
       api.setJWT(data.token)
       sessionStorage.setItem('username', data.username)
-      window.location.href = "../index.html"
+      window.location.href = "../pages/index.html"
     }
     else {
       throw Error("Login failed")
