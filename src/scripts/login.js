@@ -12,6 +12,7 @@ function onLogIn(event)
    .then((data) => {
     if(data.token) {
       api.setJWT(data.token)
+      sessionStorage.setItem('username', data.username)
       window.location.href = "../index.html"
     }
     else {

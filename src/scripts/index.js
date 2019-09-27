@@ -1,5 +1,7 @@
 import api from "../helpers/API.js"
 
+showAppropriateNavButtons()
+
 api.listAllPosts()
    .then((data) => {
     let posts    
@@ -39,6 +41,30 @@ api.listAllPosts()
      }
 })
 
-document.getElementById('logout').addEventListener('click', () => {
-    sessionStorage.clear()
-})
+// document.getElementById('logout-button').addEventListener('click', () => {
+//     sessionStorage.clear()
+// })
+
+function showAppropriateNavButtons() {
+    if (sessionStorage.getItem('Authorization')) {
+        const username = sessionStorage.getItem('username')
+        document.getElementById('login-button').remove()
+
+        let profileButton = document.createElement('a')
+        profileButton.setAttribute('href', '#')
+        profileButton.addEventListener('click', () => {
+            sessionStorage.clear()
+            window.location.href = window.location.href
+        })
+
+        let profileImage = document.createElement('img')
+        profileImage.classList.add('profile-image')
+        profileImage.setAttribute('src', `https://api.adorable.io/avatars/50/${username}.png`)
+
+        profileButton.appendChild(profileImage)
+        document.getElementsByTagName('nav')[0].appendChild(profileButton)
+      } else {
+        console.log('not logged in')
+        // document.getElementById('logout-button').remove()
+      } 
+}
