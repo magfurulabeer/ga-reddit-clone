@@ -13,22 +13,22 @@
     <header>
       <a id="home-button" href="index.html">
         <img src="../assets/logo.png">
-        <h1>Fake Reddit</h1>
+        <h1 class="header-title">Fake Reddit</h1>
       </a>
 
       <nav>
         <div class='spacer'></div>
         <!-- <a id="signup-button" href="./pages/signup.html">Register</a> -->
-        <a id="create-post-button" href="./createPost.html">
+        <a id="create-post-button" href="./createPost.html" target="bottom">
           <img src="../assets/edit.png">
         </a>
-        <a id="login-button" href="./login.html">Login</a>
+        <a id="login-button" href="./login.html" target="bottom">Login</a>
         <!-- <a id="logout-button" href="index.html">Logout</a> -->
       </nav>
     </header>
 
-
-    <div id="posts-container"></div>  
+    <iframe name="bottom" src="./home.html" style="height: 100%; width: 100%" frameborder="0"></iframe>
+    <!-- <div id="posts-container"></div>   -->
     <script type = "module" src= "../scripts/navbar.js"></script>
     <script type = "module" src= "../scripts/index.js"></script>
   </body>

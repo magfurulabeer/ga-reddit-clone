@@ -9,19 +9,20 @@
     <link rel="stylesheet" type = "text/css" href="../styles/styles.css">
     <link rel="stylesheet" type = "text/css" href="../styles/post.css">
 </head>
-<body class='centered-container'>
-
-    <div class = "main-post">
-        <h1 class="title"> </h1>
-        <h2 class="author">   </h2>
-        <p class="description">  </p>
-
-        <form id = "commentForm" style="width: 80%">
-            <textarea rows = "5" column = "400" id = "discription" form = "commentForm" placeholder="Create Comment"></textarea>
-            <button type= "submit" id ="submit-comment-button" target = "BOT">Post</button>
-    </form>     
-    </div>
-    <ul class="comment-list"></ul>
+<body style="height: 100%; width: 100%;">
+    <main>
+        <section class = "main-post">
+            <h1 class="title"> </h1>
+            <h2 class="author">   </h2>
+            <p class="description">  </p>
+        
+            <form id = "commentForm" style="width: 80%">
+                <textarea rows = "5" column = "400" id = "discription" form = "commentForm" placeholder="Create Comment"></textarea>
+                <button type= "submit" id ="submit-comment-button" target = "BOT">Post</button>
+            </form>     
+        </section>
+        <ul class="comment-list"></ul>
+    </main>
             
     <script type="module" src="../scripts/post.js"></script>
 </body>
