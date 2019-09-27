@@ -9,7 +9,7 @@ function create(event)
     let discription = document.getElementById("discription").value
     api.createPost(title,discription)
     .then((data) => {
-        window.location.href= "../index.html"
+        // window.location.href= "../index.html"
     })
     
 }
