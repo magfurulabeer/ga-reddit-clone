@@ -1,6 +1,9 @@
 import api from "../helpers/API.js"
 const createPost = document.getElementById("userPost")
     createPost.addEventListener("submit",create)
+const cancel = document.getElementById("remove")
+cancel.addEventListener("click", cancelPost)
+
 
 let userName = sessionStorage.getItem("username")
 document.getElementsByTagName("h1")[0].textContent = userName
@@ -15,7 +18,14 @@ console.log(userName)
     .then((data) => {
         
 
-        // window.location.href= "../index.html"
+        window.location.href= "../index.html"
     })
     
+}
+
+function cancelPost(event)
+
+{
+    event.preventDefault()
+    window.location.href = "../index.html"
 }
