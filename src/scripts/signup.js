@@ -12,7 +12,8 @@ function onSignup(event)
   api.signup(email,password,username)
     .then((data) => {
       if(data.token) {
-        sessionStorage.setItem("JWT",data.token)
+        sessionStorage.setItem("Authorization",data.token)
+        window.location.href = './home.html'
       }
       else{
         throw Error("SignUp failed")
