@@ -18,7 +18,7 @@ console.log(userName)
     .then((data) => {
         
 
-        window.location.href= "../pages/index.html"
+        window.location.href= "./home.html"
     })
     
 }
@@ -27,5 +27,5 @@ function cancelPost(event)
 
 {
     event.preventDefault()
-    window.location.href = "../pages/index.html"
+    window.location.href = "./home.html"
 }
