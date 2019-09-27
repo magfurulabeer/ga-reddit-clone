@@ -34,11 +34,25 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
     }
 })
 
-const createComment = document.getElementById("commentForm")
-createComment.addEventListener("submit",commentMake)
-document.getElementsByTagName("h1")[0].textContent = post.title
-document.getElementsByTagName("h2")[0].textContent = post.user.username
-document.getElementsByTagName("p")[0].textContent = post.description
+
+
+displayPost()
+displayCommentForm()
+
+function displayCommentForm() {
+    const createComment = document.getElementById("commentForm")
+    if (sessionStorage.getItem('Authorization')) {
+        createComment.addEventListener("submit",commentMake)   
+    } else {
+        createComment.remove()
+    }
+}
+
+function displayPost() {
+    document.getElementsByTagName("h1")[0].textContent = post.title
+    document.getElementsByTagName("h2")[0].textContent = post.user.username
+    document.getElementsByTagName("p")[0].textContent = post.description
+}
 
 function commentMake(event) {
     event.preventDefault()
