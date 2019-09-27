@@ -206,6 +206,11 @@ header nav {
     height: 30px;
     width: 30px;
     background-size: contain;
+    background-repeat: none;
+}
+
+.comment-list {
+    background-color: white;
 }
 
 /* .trash-icon {
