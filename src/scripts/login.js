@@ -13,7 +13,9 @@ function onLogIn(event)
     if(data.token) {
       api.setJWT(data.token)
       sessionStorage.setItem('username', data.username)
-      window.location.href = "../pages/index.html"
+      const test = document.getElementsByName('bottom')
+      console.log('Do we have access?\n', test)
+      window.location.href = "./home.html"
     }
     else {
       throw Error("Login failed")
