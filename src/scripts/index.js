@@ -59,7 +59,7 @@ function showAppropriateNavButtons() {
 
         let profileImage = document.createElement('img')
         profileImage.classList.add('profile-image')
-        profileImage.setAttribute('src', `https://api.adorable.io/avatars/50/${username}.png`)
+        profileImage.setAttribute('src', `https://api.adorable.io/avatars/20/${username}.png`)
 
         profileButton.appendChild(profileImage)
         document.getElementsByTagName('nav')[0].appendChild(profileButton)
