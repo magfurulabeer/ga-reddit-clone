@@ -13,6 +13,7 @@ function onSignup(event)
     .then((data) => {
       if(data.token) {
         sessionStorage.setItem("JWT",data.token)
+        
       }
       else{
         throw Error("SignUp failed")
