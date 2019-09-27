@@ -23,7 +23,7 @@ api.listAllPosts()
         let description = document.createElement("p")
 
         // Change this to go to post.html
-        post.setAttribute('href', `./pages/post.html?postIndex=${i}`)
+        post.setAttribute('href', `./post.html?postIndex=${i}`)
         post.classList.add('post-container')
         title.classList.add('post-title')
         description.classList.add('post-description')
