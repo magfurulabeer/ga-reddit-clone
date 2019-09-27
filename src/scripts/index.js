@@ -38,3 +38,7 @@ api.listAllPosts()
         document.getElementById("posts-container").appendChild(post)
      }
 })
+
+document.getElementById('logout').addEventListener('click', () => {
+    sessionStorage.clear()
+})
