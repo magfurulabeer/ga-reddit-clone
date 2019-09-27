@@ -25,16 +25,18 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
         let newComment = document.createElement("li")
         newComment.textContent = comment.text
 
-        let removeButton = document.createElement("button")
-        removeButton.classList.add('remove-button')
-        removeButton.addEventListener('click', createEventListener(comment.id))
-
+        if (comment.user.username === sessionStorage.getItem('username')) {
+            let removeButton = document.createElement("button")
+            removeButton.classList.add('remove-button')
+            removeButton.addEventListener('click', createEventListener(comment.id))
+            newComment.appendChild(removeButton)
+        }
+        
         // let trashIcon = document.createElement('img')
         // trashIcon.classList.add('trash-icon')
         // trashIcon.setAttribute('src', '../assets/trash.png')
         // removeButton.appendChild(trashIcon)
 
-        newComment.appendChild(removeButton)
         
         document.querySelector("ul").appendChild(newComment)
     }
