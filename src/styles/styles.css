@@ -197,6 +197,24 @@ header nav {
 .profile-image {
     border: 1px solid black;
     border-radius: 25px;
-
 }
 
+.remove-button {
+    background-color: transparent;
+    border: 1px solid black;
+    background-image: url('../assets/trash.png');
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+}
+
+/* .trash-icon {
+    height: 50px;
+    width: auto;
+}
+
+.trash-icon:hover {
+    height: 50px;
+    width: auto;
+    
+} */

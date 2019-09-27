@@ -28,6 +28,12 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
         let removeButton = document.createElement("button")
         removeButton.classList.add('remove-button')
         removeButton.addEventListener('click', createEventListener(comment.id))
+
+        // let trashIcon = document.createElement('img')
+        // trashIcon.classList.add('trash-icon')
+        // trashIcon.setAttribute('src', '../assets/trash.png')
+        // removeButton.appendChild(trashIcon)
+
         newComment.appendChild(removeButton)
         
         document.querySelector("ul").appendChild(newComment)
@@ -67,19 +73,17 @@ function commentMake(event) {
 
 function createEventListener(id) {
     return function (event) {
-        console.log('This is the delete event')
-        console.log(id)
-        console.log(event)
         event.preventDefault()
+
         fetch(`http://thesi.generalassemb.ly:8080/comment/${id}`, {
             method: 'delete',
             headers: {
                 'Authorization': sessionStorage.getItem('Authorization')
             }
         })
-            .then(data => {
-                window.location.href = window.location.href
-            })
-            .catch(err => console.log(err)) 
+        .then(_ => {
+            window.location.href = window.location.href
+        })
+        .catch(err => console.log(err)) 
     }   
 }
