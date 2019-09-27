@@ -42,6 +42,12 @@ class Pup {
     }
 
     const url = this.baseURL + this.path
+    console.log(url)
+    console.log({
+      method: this.method,
+      headers: this.headers, 
+      body: JSON.stringify(this.body)
+    })
     let promise = fetch(url, {
       method: this.method,
       headers: this.headers, 
