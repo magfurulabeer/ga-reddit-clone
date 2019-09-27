@@ -23,15 +23,16 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
     for(let comment of data)
     {
         let newComment = document.createElement("li")
+        let removeButton = document.createElement("button")
         newComment.textContent = comment.text
         document.querySelector("ul").appendChild(newComment)
+        newComment.appendChild(removeButton)
         
     }
 })
 
 const createComment = document.getElementById("commentForm")
 createComment.addEventListener("submit",commentMake)
-document.addEventListener("onCLick",removeComment)
 document.getElementsByTagName("h1")[0].textContent = post.title
 document.getElementsByTagName("h2")[0].textContent = post.user.username
 document.getElementsByTagName("p")[0].textContent = post.description
@@ -53,6 +54,13 @@ document.getElementsByTagName("p")[0].textContent = post.description
 function removeComment(event)
 {
     event.preventDefault()
+    if(post.user.username = newComment.username){
+        api.deleteCommentById(post.id)
+    }
+    else{
+        console.log("You're not the original commenter")
+    }
+    
 
 }
 
