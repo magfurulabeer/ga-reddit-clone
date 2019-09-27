@@ -195,8 +195,10 @@ header nav {
 }
 
 .profile-image {
-    border: 1px solid black;
-    border-radius: 25px;
+    /* border: 1px solid rgba(0,0,0,0.1); */
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
 }
 
 .remove-button {
@@ -206,6 +208,11 @@ header nav {
     height: 30px;
     width: 30px;
     background-size: contain;
+    background-repeat: none;
+}
+
+.comment-list {
+    background-color: white;
 }
 
 /* .trash-icon {
@@ -250,4 +257,9 @@ box-shadow: 0px 2px 11px -5px rgba(1,1,1,1);
     text-transform: uppercase;
     font-size: 14px;
     text-align: left
+}
+
+#create-post-button img {
+    height: 30px;
+    width: auto;
 }
