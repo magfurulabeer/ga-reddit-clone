@@ -5,17 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/createPost.css">
     </head>
     <body style = "height: 100%; width: 100%;">
-        <form class = "Posting" id = "userPost" action = "../index.html" >
-            <h1 id = "guy"> </h1>
-            <input type = "text" class="tle" id = "title"> <br> <br>         
-            <textarea rows = "5" column = "400" class="des" id = "discription" form = "userPost"></textarea>
-            <div class = "postButtons">
-                <button type= "submit" id = "sub" target = "BOT">NSFW</button>
-                 <button id = "remove">Delete</button>
-            </div>    
-        </form>
+        <header>
+            <a id="home-button" href="index.html">
+                <img src="../assets/logo.png">
+                <h1>Fake Reddit</h1>
+            </a>
+        
+            <nav>
+                <div class='spacer'></div>
+                <!-- <a id="signup-button" href="./pages/signup.html">Register</a> -->
+                <a id="create-post-button" href="./createPost.html">
+                <img src="../assets/edit.png">
+                </a>
+                <a id="login-button" href="./login.html">Login</a>
+                <!-- <a id="logout-button" href="index.html">Logout</a> -->
+            </nav>
+        </header>
+
+        <main>
+            <form class = "Posting" id = "userPost" action = "../pages/index.html" >
+                <h1 id = "guy"> </h1>
+                <input placeholder="Enter title here..." type = "text" id = "title">    
+                <textarea placeholder="Enter description here..." rows = "5" column = "400" id="discription" form = "userPost"></textarea>
+                <div class = "postButtons">
+                    <button id = "remove">Cancel</button>
+                    <div class="spacer"></div>
+                    <button type= "submit" id = "sub" target = "BOT">Post</button>
+                </div>    
+            </form>
+        </main>
+
+       
     </body>
     <script type= "module" src= "../scripts/createPost.js"></script>
 </html>

@@ -39,10 +39,6 @@ center {
     border: 30%
 }
 
-.postButtons{
-    float: right;
-}
-
 .centered-container {
     display: flex;
     flex-direction: column;
@@ -118,18 +114,6 @@ box-shadow: 0px 2px 11px -5px rgba(1,1,1,1);
     font-weight: 400;
     margin: 1 1 5px 1;
 
-}
-
-.postButtons{
-    width: 30%;
-    background-color: #33CDAB;
-    padding: 7px 0;
-    margin-bottom: 15px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-size: 14px;
-    text-align: left
 }
 
 #create-post-button img {
