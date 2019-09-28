@@ -1,5 +1,5 @@
 import api from "../helpers/API.js"
-const login = document.getElementById("logIn")
+const login = document.getElementById("log-in")
 login.addEventListener("submit", onLogIn)
 
 function onLogIn(event)

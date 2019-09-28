@@ -1,0 +1,56 @@
+body {
+  background-color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+#log-in {
+  font-family: 'Roboto', sans-serif;
+  width: 300px
+}
+
+#log-in h1 {
+  text-align: left;
+}
+
+#log-in .textfield {
+  width: 97%;
+  height: 30px;
+  
+}
+
+#log-in h5 {
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+#log-in .submit-button {
+  width: 100%;
+  height: 30px;
+  background-color: rgba(51,205,171,1.0);
+  border: none;
+  margin-top: 20px;
+  color: white;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+#log-in .submit-button:hover {
+  background-color: rgba(51,205,171,0.7);
+}
+
+#log-in a {
+  text-decoration: none;
+  color: rgba(52, 152, 219,1.0)
+}
+
+#log-in a:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,0.5)
+}
