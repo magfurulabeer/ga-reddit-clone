@@ -1,11 +1,11 @@
 import api from "../helpers/API.js"
-const signup = document.getElementById("signUp")
+const signup = document.getElementById("sign-up")
 signup.addEventListener("submit", onSignup)
 
 function onSignup(event)
 {
   event.preventDefault()
-  const username = document.getElementsByName("UserName")[0].value
+  const username = document.getElementsByName("MyUserName")[0].value
   const password = document.getElementsByName("MyPass")[0].value
   const email = document.getElementsByName("MyEmail")[0].value
  

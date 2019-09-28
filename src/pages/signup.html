@@ -1,22 +1,28 @@
-<html>
-<head>
- <title> Register WEBSITE </title> 
- </head> 
- <body>
- <p>REGISTRATION FORM:</p>
- <form method="post" id = "signUp">
- <P>
-Email: <input type="text" name="MyEmail">
-<p> 
-User Name: <input type="text" name="UserName"> |  <a >Has to be 10 characters long</a>
- <p>
- Password: <input type="text" name="MyPass">
- <p>
-<input type="submit" value="Enter">
- </form>
- Already a Fake Redditor? <a href="./login.html">LOG IN</a>
-
- </body>
- <script type = "module" src="../scripts/signup.js"></script>
- </html>
- 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="../styles/signup.css">
+        <title>Register for a Fake Account</title>
+    </head>
+    <body>
+        <main>
+            <form id="sign-up" method="post" id="log-in" action="../pages/index.html">
+                <h1>Register Account</h1>
+                <h5>Username:</h5>
+                <input class="textfield" placeholder="F4keR3dd1t0r" type="text" name="MyUserName">
+                <h5>Email:</h5>
+                <input class="textfield" placeholder="johndoe@fakereddit.com" type="text" name="MyEmail">
+                <h5>Password:</h5>
+                <input class="textfield" placeholder="fakeredditistherealredditnow" type="password" name="MyPass">
+                <br>
+                <input class="submit-button" type="submit" value="Submit">
+                <p>Already a Fake Redditor? <a href="./login.html">LOG IN</a></p>
+            </form>
+        </main>
+      <script type = "module" src="../scripts/signup.js"></script>
+    </body>
+</html>
