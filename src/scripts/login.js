@@ -17,6 +17,7 @@ function onLogIn(event)
       window.location.href = "./home.html"
     }
     else {
+      document.getElementsByTagName("p")[0].textContent = "Wrong Email or Password"
       throw Error("Login failed")
     }
   })
