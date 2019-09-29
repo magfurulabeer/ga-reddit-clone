@@ -22,23 +22,35 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
 .then((data) =>{
     for(let comment of data)
     {
-        let newComment = document.createElement("li")
-        newComment.textContent = comment.text
+        let commentContainer = document.createElement("div")
+        commentContainer.classList.add('comment')
 
+        let userSection = document.createElement('div')
+        userSection.classList.add('comment-user-section')
+
+        let userImage = document.createElement('img')
+        userImage.setAttribute('src', `https://api.adorable.io/avatars/10/${comment.user.username}.png`)
+        
+        let username = document.createElement('a')
+        username.textContent = comment.user.username
+
+        let spacer = document.createElement('div')
+        spacer.classList.add('spacer')
+        
+        userSection.append(userImage, username, spacer)
         if (comment.user.username === sessionStorage.getItem('username')) {
             let removeButton = document.createElement("button")
             removeButton.classList.add('remove-button')
             removeButton.addEventListener('click', createEventListener(comment.id))
-            newComment.appendChild(removeButton)
+            userSection.appendChild(removeButton)
         }
-        
-        // let trashIcon = document.createElement('img')
-        // trashIcon.classList.add('trash-icon')
-        // trashIcon.setAttribute('src', '../assets/trash.png')
-        // removeButton.appendChild(trashIcon)
+        commentContainer.appendChild(userSection)
 
+        let commentText = document.createElement("p")
+        commentText.textContent = comment.text        
+        commentContainer.appendChild(commentText)
         
-        document.querySelector("ul").appendChild(newComment)
+        document.querySelector(".comment-list").appendChild(commentContainer)
     }
 })
 
@@ -48,7 +60,7 @@ displayPost()
 displayCommentForm()
 
 function displayCommentForm() {
-    const createComment = document.getElementById("commentForm")
+    const createComment = document.getElementById("comment-form")
     if (sessionStorage.getItem('Authorization')) {
         createComment.addEventListener("submit",commentMake)   
     } else {
@@ -65,8 +77,8 @@ function displayPost() {
 function commentMake(event) {
     event.preventDefault()
     
-    let discription = document.getElementById("discription").value
-    api.createComment(discription,post.id)
+    let description = document.querySelector("textarea").value
+    api.createComment(description,post.id)
     .then((data) => {
         window.location.href = window.location.href
     })
