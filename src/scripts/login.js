@@ -1,9 +1,8 @@
 import api from "../helpers/API.js"
-const login = document.getElementById("log-in")
-login.addEventListener("submit", onLogIn)
 
-function onLogIn(event)
-{
+document.getElementById("log-in").addEventListener("submit", onLogIn)
+
+function onLogIn(event) {
   event.preventDefault()
   const password = document.getElementsByName("MyPass")[0].value
   const email = document.getElementsByName("MyEmail")[0].value
@@ -21,5 +20,4 @@ function onLogIn(event)
       throw Error("Login failed")
     }
   })
-      
 }

@@ -1,5 +1,6 @@
 showAppropriateNav()
 
+// Not quite sure if this works as expected
 window.addEventListener('storage', () => showAppropriateNav())
 
 function showAppropriateNav() {
