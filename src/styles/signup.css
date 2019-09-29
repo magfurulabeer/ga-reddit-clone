@@ -8,27 +8,27 @@ main {
   align-items: center;  
 }
 
-#log-in {
+#sign-up {
   font-family: 'Roboto', sans-serif;
   width: 300px
 }
 
-#log-in h1 {
+#sign-up h1 {
   text-align: left;
 }
 
-#log-in .textfield {
+#sign-up .textfield {
   width: 97%;
   height: 30px;
   
 }
 
-#log-in h5 {
+#sign-up h5 {
   font-weight: 400;
   margin-bottom: 7px;
 }
 
-#log-in .submit-button {
+#sign-up .submit-button {
   width: 100%;
   height: 30px;
   background-color: rgba(51,205,171,1.0);
@@ -41,16 +41,16 @@ main {
   transition: 0.3s;
 }
 
-#log-in .submit-button:hover {
+#sign-up .submit-button:hover {
   background-color: rgba(51,205,171,0.7);
 }
 
-#log-in a {
+#sign-up a {
   text-decoration: none;
   color: rgba(52, 152, 219,1.0)
 }
 
-#log-in a:hover {
+#sign-up a:hover {
   text-decoration: none;
   color: rgba(0,0,0,0.5)
 }

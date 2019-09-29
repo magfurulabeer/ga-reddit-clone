@@ -41,6 +41,7 @@ body {
   font-size: 35px;
   font-weight: bold;
   margin: 0 0 10px 0;
+  text-overflow: ellipsis;
 }
 
 .post-description {
@@ -48,4 +49,7 @@ body {
   font-weight: 100;
   margin: 0;
   font-size: 18px;
+  line-height: 1.0;
+  width: 100%;
+  word-wrap: break-word;
 }
