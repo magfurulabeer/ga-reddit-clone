@@ -13,7 +13,6 @@ api.listAllPosts()
     }
     let postObject = {posts}
 
-    console.log(sessionStorage.getItem('Authorization'))
     sessionStorage.setItem("posts",JSON.stringify(postObject))
     for( let i = posts.length - 1; i >=0; i-- )
      {

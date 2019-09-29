@@ -142,7 +142,7 @@ api.listAllPosts = () => api.pup.get('/post/list').fetch()
 **    },
 **  ]
 */
-api.getCommentsByPostId = (postId) => api.pup.get(`post/${postId}/comment`).fetch()
+api.getCommentsByPostId = (postId) => api.pup.get(`/post/${postId}/comment`).fetch()
 
 /*
 **  BODY
@@ -151,7 +151,7 @@ api.getCommentsByPostId = (postId) => api.pup.get(`post/${postId}/comment`).fetc
 **  RESPONSE
 **  success
 */
-api.deleteCommentByCommentId = (commentId) => api.pup.delete(`comment/${commentId}`).authenticated().fetch()
+api.deleteCommentByCommentId = (commentId) => api.pup.delete(`/comment/${commentId}`).authenticated().fetch()
 
 /*
 **  BODY
@@ -160,7 +160,7 @@ api.deleteCommentByCommentId = (commentId) => api.pup.delete(`comment/${commentI
 **  RESPONSE
 **  success
 */
-api.deletePostByPostId = (postId) => api.pup.delete(`post/${postId}`).authenticated().fetch()
+api.deletePostByPostId = (postId) => api.pup.delete(`/post/${postId}`).authenticated().fetch()
 
 /*
 **  BODY
@@ -212,7 +212,7 @@ api.getCommentsByUser = () => api.pup.get('/user/comment').authenticated().fetch
 **  RESPONSE
 **  [] 
 */
-api.getPostsByUser = () => api.pup.get('user/post').authenticated().fetch()
+api.getPostsByUser = () => api.pup.get('/user/post').authenticated().fetch()
 
 
 /*

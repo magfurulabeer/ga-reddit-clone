@@ -14,7 +14,6 @@ function onLogIn(event)
       api.setJWT(data.token)
       sessionStorage.setItem('username', data.username)
       const test = document.getElementsByName('bottom')
-      console.log('Do we have access?\n', test)
       window.location.href = "./home.html"
     }
     else {

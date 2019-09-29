@@ -9,10 +9,7 @@ let post = parsePost[postIndex]
 displayPost()
 displayCommentForm()
 
-fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
-    .then((response) =>{
-        return response.json()
-    })
+api.getCommentsByPostId(post.id)
     .then((data) =>{
         for(let comment of data) {
             let commentContainer = document.createElement("div")
@@ -33,11 +30,6 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
             commentContainer.appendChild(commentText)
             
             document.querySelector(".comment-list").appendChild(commentContainer)
-        }
-
-        // Add margin only if logged in
-        if(sessionStorage.getItem("Authorization")) {
-            document.querySelector(".comment-list").classList.add('no-top-margin')
         }
     })
 
@@ -76,16 +68,14 @@ function createEventListener(id) {
     return function (event) {
         event.preventDefault()
 
-        fetch(`http://thesi.generalassemb.ly:8080/comment/${id}`, {
-            method: 'delete',
-            headers: {
-                'Authorization': sessionStorage.getItem('Authorization')
-            }
-        })
+        api.deleteCommentByCommentId(id)
         .then(_ => {
             window.location.href = window.location.href
         })
-        .catch(err => console.log(err)) 
+        .catch(err => {
+            window.location.href = window.location.href
+            console.log(err)
+        }) 
     }   
 }
 

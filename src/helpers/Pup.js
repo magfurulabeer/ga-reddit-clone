@@ -42,12 +42,7 @@ class Pup {
     }
 
     const url = this.baseURL + this.path
-    console.log(url)
-    console.log({
-      method: this.method,
-      headers: this.headers, 
-      body: JSON.stringify(this.body)
-    })
+    const body = this.body ? JSON.stringify(this.body) : null
     let promise = fetch(url, {
       method: this.method,
       headers: this.headers, 
@@ -56,13 +51,14 @@ class Pup {
 
     // If retrieving JSON, automatically parse it
     if (this.headers.get('Content-Type') === 'application/json') {
+      console.log("What's going on?")
       return promise
         .then(response => { 
           try {
             return response.json()
           } catch(error) {
-            console.log(error)
-            // In the meantime until all responses are json
+
+            // In the meantime until all api responses are json
             return response
           }
         })
@@ -72,6 +68,7 @@ class Pup {
   }
 
   authenticated() {
+    // Removed for simplicity
     // if (!this.getToken) {
     //   throw Error('Pup::authenticated() - No way to get JWT')
     // }
