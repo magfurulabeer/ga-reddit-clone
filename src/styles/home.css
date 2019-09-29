@@ -5,6 +5,10 @@ body {
 #posts-container {
   padding-top: 25px;
   background-color: white;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   /* 
 
   width: 70%;
