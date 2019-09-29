@@ -11,7 +11,8 @@ displayCommentForm()
 
 api.getCommentsByPostId(post.id)
     .then((data) =>{
-        for(let comment of data) {
+        const comments = data.sort((a, b) => b.id - a.id)
+        for(let comment of comments) {
             let commentContainer = document.createElement("div")
             commentContainer.classList.add('comment')
 
