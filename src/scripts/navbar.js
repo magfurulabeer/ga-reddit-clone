@@ -21,6 +21,10 @@ function showAppropriateNav() {
   
       profileButton.appendChild(profileImage)
       document.getElementsByTagName('nav')[0].appendChild(profileButton)
+      document.getElementById('create-post-button').setAttribute('style', 'visibility: visible')
+
     }
+  } else {
+    document.getElementById('create-post-button').setAttribute('style', 'visibility: hidden')
   }
 }
