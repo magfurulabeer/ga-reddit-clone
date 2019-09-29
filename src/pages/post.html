@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Post</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type = "text/css" href="../styles/styles.css">
-    <link rel="stylesheet" type = "text/css" href="../styles/post.css">
-</head>
-<body style="height: 100%; width: 100%;">
-    <main>
-        <section class="main-post">
-            <h1></h1>
-            <h2></h2>
-            <p></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My Post</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type = "text/css" href="../styles/styles.css">
+        <link rel="stylesheet" type = "text/css" href="../styles/post.css">
+    </head>
+    <body style="height: 100%; width: 100%;">
+        <main>
+            <section class="main-post">
+                <h1></h1>
+                <p></p>
+                <hr>
+                <form id="comment-form">
+                    <textarea rows = "5" column = "400" form="comment-form" placeholder="Create Comment"></textarea>
+                    <button type= "submit" target = "BOT">Post</button>
+                </form>     
+            </section>
             <hr>
-            <form id="comment-form">
-                <textarea rows = "5" column = "400" form="comment-form" placeholder="Create Comment"></textarea>
-                <button type= "submit" target = "BOT">Post</button>
-            </form>     
-        </section>
-        <hr>
-        <section class="comment-list"></section>
-    </main>
-    <script type="module" src="../scripts/post.js"></script>
-</body>
-
+            <section class="comment-list">
+                <h2>Comments</h2>
+            </section>
+        </main>
+        <script type="module" src="../scripts/post.js"></script>
+    </body>
 </html>

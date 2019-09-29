@@ -12,6 +12,7 @@ section.main-post {
   width: 50%;
   font-family: 'Roboto', sans-serif;
   text-align: left;
+  padding-top: 30px;
 }
 
 section.main-post h1 {
@@ -108,29 +109,6 @@ section.main-post h1 {
 
 .comment p {
   flex: 1;
-}
-
-.comment-user-section {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.comment-user-section img {
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-
-.comment-user-section a {
-  font-weight: bold;
-}
-
-.comment-user-section .spacer {
-  flex: 1
 }
 
 .remove-button {

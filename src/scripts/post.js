@@ -1,80 +1,63 @@
 import api from "../helpers/API.js"
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
+import createUserSection from '../helpers/createUserSection.js'
+
 let postIndex = getQueryVariable( "postIndex")
 let allPost = sessionStorage.getItem("posts")
 let parsePost = JSON.parse(allPost).posts
-console.log(parsePost)
 let post = parsePost[postIndex]
-console.log(post)
-fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
-.then((response) =>{
-    return response.json()
-})
-.then((data) =>{
-    for(let comment of data)
-    {
-        let commentContainer = document.createElement("div")
-        commentContainer.classList.add('comment')
-
-        let userSection = document.createElement('div')
-        userSection.classList.add('comment-user-section')
-
-        let userImage = document.createElement('img')
-        userImage.setAttribute('src', `https://api.adorable.io/avatars/10/${comment.user.username}.png`)
-        
-        let username = document.createElement('a')
-        username.textContent = comment.user.username
-
-        let spacer = document.createElement('div')
-        spacer.classList.add('spacer')
-        
-        userSection.append(userImage, username, spacer)
-        if (comment.user.username === sessionStorage.getItem('username')) {
-            let removeButton = document.createElement("button")
-            removeButton.classList.add('remove-button')
-            removeButton.addEventListener('click', createEventListener(comment.id))
-            userSection.appendChild(removeButton)
-        }
-        commentContainer.appendChild(userSection)
-
-        let commentText = document.createElement("p")
-        commentText.textContent = comment.text        
-        commentContainer.appendChild(commentText)
-        
-        document.querySelector(".comment-list").appendChild(commentContainer)
-    }
-})
-
-
 
 displayPost()
 displayCommentForm()
 
+fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
+    .then((response) =>{
+        return response.json()
+    })
+    .then((data) =>{
+        for(let comment of data)
+        {
+            let commentContainer = document.createElement("div")
+            commentContainer.classList.add('comment')
+
+            let userSection = createUserSection(comment.user.username)
+            let savedUsername = sessionStorage.getItem('username')
+            if (savedUsername && comment.user.username === savedUsername) {
+                let removeButton = document.createElement("button")
+                removeButton.classList.add('remove-button')
+                removeButton.addEventListener('click', createEventListener(comment.id))
+                userSection.appendChild(removeButton)
+            }
+            commentContainer.appendChild(userSection)
+
+            let commentText = document.createElement("p")
+            commentText.textContent = comment.text        
+            commentContainer.appendChild(commentText)
+            
+            document.querySelector(".comment-list").appendChild(commentContainer)
+        }
+    })
+
 function displayCommentForm() {
     const createComment = document.getElementById("comment-form")
     if (sessionStorage.getItem('Authorization')) {
-        createComment.addEventListener("submit",commentMake)   
+        createComment.addEventListener("submit", makeComment)   
     } else {
         createComment.remove()
     }
 }
 
 function displayPost() {
-    document.getElementsByTagName("h1")[0].textContent = post.title
-    document.getElementsByTagName("h2")[0].textContent = post.user.username
-    document.getElementsByTagName("p")[0].textContent = post.description
+    const userSection = createUserSection(post.user.username)
+    const title = document.querySelector("h1")
+    const description = document.querySelector("p")
+
+    title.textContent = post.title
+    description.textContent = post.description
+
+    document.querySelector(".main-post").insertBefore(userSection, title)
 }
 
-function commentMake(event) {
+function makeComment(event) {
     event.preventDefault()
     
     let description = document.querySelector("textarea").value
@@ -100,4 +83,16 @@ function createEventListener(id) {
         })
         .catch(err => console.log(err)) 
     }   
+}
+
+// https://css-tricks.com/snippets/javascript/get-url-variables/
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
 }

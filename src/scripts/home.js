@@ -1,4 +1,5 @@
 import api from "../helpers/API.js"
+import createUserSection from "../helpers/createUserSection.js"
 
 api.listAllPosts()
    .then((data) => {
@@ -18,28 +19,22 @@ api.listAllPosts()
      {
     
         let post = document.createElement("a")
-
-        let title = document.createElement("h3")
-        let description = document.createElement("p")
-
-        // Change this to go to post.html
         post.setAttribute('href', `./post.html?postIndex=${i}`)
         post.classList.add('post-container')
+
+        let userSection = createUserSection(posts[i].user.username)
+        post.appendChild(userSection)
+
+        let title = document.createElement("h3")
         title.classList.add('post-title')
-        description.classList.add('post-description')
-        
         title.textContent = `${posts[i].title}`
-        description.textContent = `${posts[i].description}`
-        
         post.appendChild(title)
+
+        let description = document.createElement("p")
+        description.classList.add('post-description')
+        description.textContent = `${posts[i].description}`
         post.appendChild(description)
 
-        // post.textContent = `${posts[i].title}`
         document.getElementById("posts-container").appendChild(post)
      }
 })
-
-// document.getElementById('logout-button').addEventListener('click', () => {
-//     sessionStorage.clear()
-// })
-
