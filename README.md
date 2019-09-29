@@ -4,16 +4,16 @@
 https://www.pivotaltracker.com/n/projects/2400263 
 
 ### Technologies Used:
--HTML5: We used HTML5 for the front end of the project. 
--JavaScript: We used JavaScript for handling the APIs and collecting information from the front end.
--CSS: We used CSS for basic styling of the pages
+- HTML5: We used HTML5 for the layout of the pages
+- CSS: We used CSS for styling of the pages
+- JavaScript: We used JavaScript for handling the APIs and user interaction
 
-We also created a Module to handle the API functions so we didn't have to write out Fetch() statements on every Fetch() call. All we had to do was pass the necessary parameters and the module handled everything. This method made it easier to read what call we were making on the Fetch() call.
+We also created an object wrapper around the API to abstract away the fetch code. It allowed us to make api calls as simple function calls passing in the approproate parameters and receiving a promise in return. It allowed for our code to cleaner and easier to read.
 
 ### General Planning:
-For this project, we had a couple of desgins in mind on how to create it. We started by looking at reddit to try to get a understanding of the layout of everything. Then once we understood what went where, we created sketches for how we want our final design to start looking. We created 4 different diesgins for each function. We created a home page, a login page, a sign up page, and a page for creating post. Creating the seperate pages helped us out while coding because we were able to test each page for functionality before we linked it to the home page. 
+For this project, we had a couple of desgins in mind on how to create it. We started by looking at reddit to try to get a understanding of the layout of everything. Then once we understood what went where, we created sketches for how we want our final design to start looking. We created 4 different designs for each function. We created a home page, a login page, a sign up page, a post page, and a page for creating posts. Creating the separate pages helped us out while coding because we were able to test each page for functionality before we linked it to the home page. 
 
-Once we had our design, we spent most of our time using the white boards in GA to plan out our coding. We created a lot of psudeo code which helped in actually writing the actually code because we understood what the functions were supposed to do. We spent the beginning of the project coding by ourselves with our respsonsibilites split between creating the module for the APIs and creating the front end of the site. Once the front end was finished, we started pair programming when writing the JavaScript code. We split time pair programming so we can get the maximun output on our knowledge. 
+Once we had our design, we spent most of our time using the white boards in GA to plan out our coding. We created a lot of psudeo code which helped in actually writing the actually code because we understood what the functions were supposed to do. We spent the beginning of the project coding by ourselves with our responsibilities split between creating the module for the APIs and creating the front end of the site. Once the front end was finished, we started pair programming when writing the JavaScript code. We split time pair programming so we can get the maximun output on our knowledge. 
 
 ### Problems:
 We ran into a couple of problems when developing our project. 
