@@ -14,8 +14,7 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
         return response.json()
     })
     .then((data) =>{
-        for(let comment of data)
-        {
+        for(let comment of data) {
             let commentContainer = document.createElement("div")
             commentContainer.classList.add('comment')
 
@@ -34,6 +33,11 @@ fetch(`http://thesi.generalassemb.ly:8080/post/${post.id}/comment`)
             commentContainer.appendChild(commentText)
             
             document.querySelector(".comment-list").appendChild(commentContainer)
+        }
+
+        // Add margin only if logged in
+        if(sessionStorage.getItem("Authorization")) {
+            document.querySelector(".comment-list").classList.add('no-top-margin')
         }
     })
 

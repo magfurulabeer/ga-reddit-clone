@@ -85,6 +85,24 @@ header nav {
     justify-content: flex-end;
 }
 
+#login-button {
+    text-decoration: none;
+    color: rgba(52, 152, 219,1.0);;
+    border: 1px solid rgba(52, 152, 219,1.0);;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+}
+
+#login-button:hover {
+    color: rgba(0,0,0,0.5);
+    border-color: rgba(0,0,0,0.5);
+}
+
 .profile-image {
     /* border: 1px solid rgba(0,0,0,0.1); */
     height: 40px;
