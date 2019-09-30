@@ -9,12 +9,37 @@ let post = parsePost[postIndex]
 displayPost()
 displayCommentForm()
 
+let recentButton = document.querySelector('.comments-header').children[1]
+let oldestButton = document.querySelector('.comments-header').children[2]
+
+recentButton.addEventListener('click', sortButtonWasClicked)
+oldestButton.addEventListener('click', sortButtonWasClicked)
+
+function sortButtonWasClicked(event) {
+    // Only run if the unselected button was clicked
+    if(!(event.srcElement.classList[0] === "selected")) {
+        event.preventDefault()
+
+        document.querySelector(".selected").classList.remove("selected")
+        event.srcElement.classList.add("selected")
+
+        let comments = document.getElementsByClassName('comment')
+        let reorderedComments = []
+        for (let comment of comments) {
+            reorderedComments.unshift(comment)
+            comment.remove()
+        }
+        document.querySelector('.comment-list').append(...reorderedComments)
+    }
+    
+}
+
 api.getCommentsByPostId(post.id)
     .then((data) =>{
         // Sort comments by id
-        // const comments = data.sort((a, b) => b.id - a.id)
+        const comments = data.sort((a, b) => b.id - a.id)
         // Iterating through the sorted comments rather than the unsorted data
-        for(let comment of data) {
+        for(let comment of comments) {
             let commentContainer = document.createElement("div")
             commentContainer.classList.add('comment')
 

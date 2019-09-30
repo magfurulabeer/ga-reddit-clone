@@ -79,3 +79,19 @@ section.main-post h1 {
   background-repeat: no-repeat;
   border: none;
 }
+
+.comments-header h2 {
+  margin-bottom: 0;
+}
+
+.comments-header a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(52, 152, 219,1.0);
+}
+
+.selected {
+  font-weight: bold;
+  /* !important is not good practice but laziness... */
+  color: rgba(34, 131, 195, 1.0) !important;
+}

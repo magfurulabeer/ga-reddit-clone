@@ -46,7 +46,7 @@ class Pup {
     let promise = fetch(url, {
       method: this.method,
       headers: this.headers, 
-      body: JSON.stringify(this.body)
+      body
     })
 
     // If retrieving JSON, automatically parse it
