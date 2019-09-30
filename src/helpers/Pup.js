@@ -51,7 +51,6 @@ class Pup {
 
     // If retrieving JSON, automatically parse it
     if (this.headers.get('Content-Type') === 'application/json') {
-      console.log("What's going on?")
       return promise
         .then(response => { 
           try {
