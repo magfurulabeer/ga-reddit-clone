@@ -7,6 +7,7 @@ function onLogIn(event) {
   const password = document.getElementsByName("MyPass")[0].value
   const email = document.getElementsByName("MyEmail")[0].value
 
+  // This could be reused instead of copied and pasted
   // Prepare all text fields for shake if email/password are wrong
   const errorFields = document.querySelectorAll('.error')
   for (let field of errorFields) {
