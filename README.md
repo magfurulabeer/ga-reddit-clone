@@ -23,3 +23,11 @@ One of the main errors we were getting was a CORS issue which wouldn't let impor
 Another issue we ran into came when we were designing our project. When creating the layout of our assignment, we descided to use the HTML frame tags to section off the home page. The problem was that frames were discontiuned in HTML5. We replaced it with an iframe but the iframe did not seem to take up the full screen. Later in the project, we took another shot with the iframe because didn't want to copy and paste our header into every page. We googled more extensively than before and found a way to get around our original sizing issue by using absolute positioning.
 
 We had an issue with when displaying comments. We were under the impression that they were shown in order however after some testing, we realized that the comments were grouped by the user first and supposedly sorted but we managed mess with the sorting if we posted comments succession fast enough. We ended up sorting the comments client-side by the comment ids since they were in order(though it's not the best course of action since that might change in the future) and we no access to timestamps.
+
+### Wireframes:
+
+![Home page sketch](https://github.com/magfurulabeer/ga-reddit-clone/blob/master/mockups/Homepage%20-%20Not%20Logged%20In.png)
+![Login page sketch](https://github.com/magfurulabeer/ga-reddit-clone/blob/master/mockups/Login.png)
+![Post Page sketch](https://github.com/magfurulabeer/ga-reddit-clone/blob/master/mockups/Post%20Page.png)
+![Sign up page sketch](https://github.com/magfurulabeer/ga-reddit-clone/blob/master/mockups/Signup.png)
+
